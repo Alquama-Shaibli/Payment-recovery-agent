@@ -1,0 +1,41 @@
+{
+  "summary": {
+    "total_transactions": 200,
+    "successful_recoveries": 101,
+    "overall_recovery_rate": 0.505,
+    "compliance_audit_entries": 3003,
+    "compliance_violations": 0
+  },
+  "by_decline_type": {
+    "soft_insufficient_funds": {
+      "count": 71,
+      "recovered": 41,
+      "rate": 0.5774647887323944
+    },
+    "soft_issuer_hold": {
+      "count": 37,
+      "recovered": 35,
+      "rate": 0.9459459459459459
+    },
+    "technical_errors": {
+      "count": 35,
+      "recovered": 25,
+      "rate": 0.7142857142857143
+    },
+    "hard_declines": {
+      "count": 57,
+      "recovered": 0,
+      "rate": 0.0
+    }
+  },
+  "decisions": {
+    "escalate_human": 91,
+    "retry_scheduled": 76,
+    "retry_immediate": 25,
+    "reject": 8
+  },
+  "financial": {
+    "amount_at_risk_inr": 2345000,
+    "amount_recovered_inr": 1184225
+  }
+}

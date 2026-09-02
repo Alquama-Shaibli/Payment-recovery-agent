@@ -4,11 +4,11 @@
 
 Top features driving root cause predictions:
 
-- **decline_code_encoded**: 92.35
-- **is_payday**: 1.83
-- **hour_of_day**: 1.51
-- **payment_method_encoded**: 1.19
-- **customer_retry_count**: 1.03
+- **decline_code_encoded**: 90.47
+- **amount**: 1.87
+- **customer_retry_count**: 1.82
+- **hour_of_day**: 1.73
+- **day_of_week**: 1.43
 
 ## SHAP Analysis
 
@@ -67,4 +67,4 @@ Each decision logged as JSON:
 ```
 
 ---
-Generated: 2026-08-25 20:26:24
+Generated: 2026-09-02 19:20:02

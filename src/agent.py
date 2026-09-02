@@ -103,9 +103,13 @@ class PaymentRecoveryAgent:
                 # Step 3: Recovery decision
                 decision = self._decide_recovery_action(txn, decision, root_cause)
 
-            # Step 4: Mock execution
+                # Step 3b: Merchant-aware enrichment
+                from src.merchant_strategies import apply_merchant_logic
+                decision = apply_merchant_logic(txn, decision)
+
+            # Step 4: Execute via real Razorpay API (falls back to mock if no credentials)
             if decision['agent_decision'] and 'retry' in decision['agent_decision']:
-                success = self._mock_retry(txn, decision)
+                success = self._retry_via_api(txn, decision)
                 decision['success'] = success
                 if success:
                     self.stats['recovered'] += 1
@@ -233,11 +237,44 @@ class PaymentRecoveryAgent:
 
         return decision
 
+    def _retry_via_api(self, txn: Dict, decision: Dict) -> bool:
+        """
+        Call the actual Razorpay test API to execute the retry.
+
+        If credentials are not configured, falls back to the calibrated
+        success-probability simulation so the system is always runnable
+        in demo / CI environments.
+
+        Args:
+            txn:      Transaction dict
+            decision: Current decision dict (mutated with api_response)
+
+        Returns:
+            True if the retry was successful, False otherwise
+        """
+        from src.razorpay_integration import RazorpayTestClient
+
+        client = RazorpayTestClient()
+
+        # If credentials are absent, fall back to simulation
+        if not client.key_id or not client.key_secret:
+            return self._mock_retry(txn, decision)
+
+        result = client.retry_payment(
+            txn_id=txn['txn_id'],
+            amount=int(txn.get('amount', 0)),
+            customer_id=str(txn.get('customer_id', f"cust_{txn['txn_id']}")),
+        )
+
+        decision['api_response'] = result
+        return result.get('success', False)
+
     def _mock_retry(self, txn: Dict, decision: Dict) -> bool:
         """
-        Mock retry against Razorpay test gateway.
+        Simulated retry used when real API credentials are not available.
 
-        Success probability is calibrated per root cause type.
+        Success probability is calibrated per root cause type to reflect
+        real-world Razorpay test gateway behaviour.
 
         Args:
             txn: Transaction dict

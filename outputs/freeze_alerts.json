@@ -1,0 +1,127 @@
+{
+  "timestamp": "2026-09-02T13:49:47.913950",
+  "batch_analysis": {
+    "b2b": {
+      "merchant_id": "merch_b2b_056",
+      "merchant_category": "b2b",
+      "risk_level": "LOW",
+      "freeze_risk_score": 0.0565,
+      "emoji": "\ud83d\udfe2",
+      "metrics": {
+        "total_transactions": 44,
+        "soft_declines": 25,
+        "hard_declines": 11,
+        "technical_errors": 8,
+        "decline_rate": 0.25,
+        "retry_exhaustion_rate": 0.25,
+        "volume_spike": 0.88
+      },
+      "threshold_breaches": [
+        "decline_rate 25% > 20% (Razorpay limit)"
+      ],
+      "breach_count": 1,
+      "recommendation": "LOW: Continue normal monitoring"
+    },
+    "retail": {
+      "merchant_id": "merch_retail_726",
+      "merchant_category": "retail",
+      "risk_level": "CRITICAL",
+      "freeze_risk_score": 0.727,
+      "emoji": "\ud83d\udd34",
+      "metrics": {
+        "total_transactions": 86,
+        "soft_declines": 40,
+        "hard_declines": 25,
+        "technical_errors": 21,
+        "decline_rate": 0.2907,
+        "retry_exhaustion_rate": 0.1279,
+        "volume_spike": 1.72
+      },
+      "threshold_breaches": [
+        "decline_rate 29% > 20% (Razorpay limit)",
+        "volume_spike 1.7x > 1.5x baseline"
+      ],
+      "breach_count": 2,
+      "recommendation": "URGENT: Escalate to Razorpay compliance within 2 h"
+    },
+    "subscription": {
+      "merchant_id": "merch_subscription_612",
+      "merchant_category": "subscription",
+      "risk_level": "HIGH",
+      "freeze_risk_score": 0.612,
+      "emoji": "\ud83d\udfe0",
+      "metrics": {
+        "total_transactions": 70,
+        "soft_declines": 43,
+        "hard_declines": 21,
+        "technical_errors": 6,
+        "decline_rate": 0.3,
+        "retry_exhaustion_rate": 0.1143,
+        "volume_spike": 1.4
+      },
+      "threshold_breaches": [
+        "decline_rate 30% > 20% (Razorpay limit)"
+      ],
+      "breach_count": 1,
+      "recommendation": "HIGH: Contact merchant + increase monitoring"
+    }
+  },
+  "summary": {
+    "critical_risk": 1,
+    "high_risk": 1,
+    "medium_risk": 0,
+    "low_risk": 1,
+    "total_merchants_analyzed": 3
+  },
+  "alerts": [
+    {
+      "merchant_id": "merch_retail_726",
+      "merchant_category": "retail",
+      "risk_level": "CRITICAL",
+      "freeze_risk_score": 0.727,
+      "emoji": "\ud83d\udd34",
+      "metrics": {
+        "total_transactions": 86,
+        "soft_declines": 40,
+        "hard_declines": 25,
+        "technical_errors": 21,
+        "decline_rate": 0.2907,
+        "retry_exhaustion_rate": 0.1279,
+        "volume_spike": 1.72
+      },
+      "threshold_breaches": [
+        "decline_rate 29% > 20% (Razorpay limit)",
+        "volume_spike 1.7x > 1.5x baseline"
+      ],
+      "breach_count": 2,
+      "recommendation": "URGENT: Escalate to Razorpay compliance within 2 h"
+    },
+    {
+      "merchant_id": "merch_subscription_612",
+      "merchant_category": "subscription",
+      "risk_level": "HIGH",
+      "freeze_risk_score": 0.612,
+      "emoji": "\ud83d\udfe0",
+      "metrics": {
+        "total_transactions": 70,
+        "soft_declines": 43,
+        "hard_declines": 21,
+        "technical_errors": 6,
+        "decline_rate": 0.3,
+        "retry_exhaustion_rate": 0.1143,
+        "volume_spike": 1.4
+      },
+      "threshold_breaches": [
+        "decline_rate 30% > 20% (Razorpay limit)"
+      ],
+      "breach_count": 1,
+      "recommendation": "HIGH: Contact merchant + increase monitoring"
+    }
+  ],
+  "business_impact": {
+    "critical_merchants_at_risk": 1,
+    "estimated_monthly_revenue_at_risk_inr": 1666666,
+    "estimated_revenue_saved_inr": 1000000,
+    "action_window_hours": 24
+  }
+}

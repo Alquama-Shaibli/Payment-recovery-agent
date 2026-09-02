@@ -4,6 +4,11 @@ __pycache__/
 *$py.class
 *.so
 .Python
+
+# Environment / secrets (NEVER commit)
+.env
+.env.local
+.env.*.local
 build/
 develop-eggs/
 dist/
@@ -42,3 +47,8 @@ outputs/*.jsonl
 # OS
 .DS_Store
 Thumbs.db
+
+catboost_info/
+debug_output.txt
+run_output.txt
+
