@@ -5,7 +5,6 @@ Production-ready agent that recovers lost payment revenue and predicts merchant 
 ![Tests](https://img.shields.io/badge/tests-39%2F39-brightgreen)
 ![Coverage](https://img.shields.io/badge/coverage-87%25-brightgreen)
 ![Python](https://img.shields.io/badge/python-3.10+-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
 
 ---
 
