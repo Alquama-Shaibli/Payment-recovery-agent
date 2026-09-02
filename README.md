@@ -1,4 +1,4 @@
-# 🏆 AI Payment Recovery Agent
+# AI Payment Recovery Agent (Razorpay)
 
 Production-ready agent that recovers lost payment revenue and predicts merchant account freezes 24–48 hours in advance.
 
@@ -88,9 +88,9 @@ Payment Batch (200 txns)
 │  Output: root_cause (7 classes)           │
 ├───────────────────────────────────────────┤
 │   COMPLIANCE GATE CHECKER              │[2]
-│  -  RBI NACH  : Max 1 retry / mandate      │
-│  -  Cards     : Max 5 retries              │
-│  -  Freeze    : Alert when score > 0.65    │
+│  -  RBI NACH  : Max 1 retry / mandate     │
+│  -  Cards     : Max 5 retries             │
+│  -  Freeze    : Alert when score > 0.65   │
 ├───────────────────────────────────────────┤
 │   RECOVERY DECISION AGENT              │[3]
 │  soft_insufficient_funds                  │
@@ -345,31 +345,17 @@ Technical      :  35 (18%)  ← Almost always recoverable
 ```
 
 ---
-
-## 🎯 Why This Fits Track 3
-
-| Criterion          | Approach                                      | Why It Matters                              |
-|--------------------|-----------------------------------------------|---------------------------------------------|
-| Freeze Detection   | CRITICAL alert with ~24 h lead time           | Directly addresses Razorpay’s #1 churn risk |
-| Honest Metrics     | Per-type breakdown, no cherry-picking         | Judges can trust the numbers                |
-| Compliance         | 200/200 audited, 0 violations                 | Production-deployable today                 |
-| Code Quality       | 39/39 tests, GitHub Actions CI/CD             | Engineering credibility                     |
-| Real API           | Razorpay test endpoint + backoff decorator    | Not mocked — actually calls Razorpay        |
-| Explainability     | SHAP per decision                             | Meets compliance & audit needs              |
-
----
-
 ## 📚 References & Further Reading
 
 - Recurly — *Failed Payment Recovery: What the Data Shows*  
-  https://recurly.com/blog/failed-payment-recovery-data-based-strategy/ [74]
+  https://recurly.com/blog/failed-payment-recovery-data-based-strategy/ 
 - Recurly — *Understanding Intelligent Retries*  
-  https://recurly.com/blog/product-perspectives-understanding-intelligent-retries/ [75]
+  https://recurly.com/blog/product-perspectives-understanding-intelligent-retries/ 
 - Recurly Documentation — *Intelligent retries*  
-  https://docs.recurly.com/recurly-subscriptions/docs/retry-logic [77]
+  https://docs.recurly.com/recurly-subscriptions/docs/retry-logic 
 - RBI — *Guidelines on Regulation of Payment Aggregators and Payment Gateways*  
-  https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12050 [73]
+  https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12050 
 - Checkout.com — *Chargebacks in agentic commerce*  
-  https://www.checkout.com/blog/chargebacks-in-agentic-commerce-how-merchants-can-stay-ahead [78]
+  https://www.checkout.com/blog/chargebacks-in-agentic-commerce-how-merchants-can-stay-ahead 
 
 ---
