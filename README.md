@@ -367,8 +367,8 @@ Technical      :  35 (18%)  ← Almost always recoverable
 ## 🎥 Demo
 
 A 3–4 minute walkthrough of the agent running end-to-end, including recovery results, freeze alerts, and compliance audit trail:  
+https://youtu.be/1Nn0ws8cPYY
 
-[Add your video link here – YouTube / Loom / Drive]
 
 ---
 
