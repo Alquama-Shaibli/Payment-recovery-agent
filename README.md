@@ -1,14 +1,19 @@
-# AI Payment Recovery Agent (Razorpay)
+# AI Payment Recovery Agent
 
-Production-ready agent that recovers lost payment revenue and predicts merchant account freezes 24–48 hours in advance.
-
+![Buildathon](https://img.shields.io/badge/built%20for-Razorpay%20Buildathon%202026-blue)
 ![Tests](https://img.shields.io/badge/tests-39%2F39-brightgreen)
 ![Coverage](https://img.shields.io/badge/coverage-87%25-brightgreen)
 ![Python](https://img.shields.io/badge/python-3.10+-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+
+Production-ready agent that recovers lost payment revenue and predicts merchant account freezes 24–48 hours in advance.  
+
+<img width="988" height="555" alt="Screenshot 2026-09-03 195440" src="https://github.com/user-attachments/assets/f774287b-5b55-48bf-be72-147b246cbbb0" />
+
 
 ---
 
-## 🎯 Problem
+## 🎯 The Problem
 
 Payment aggregators like Razorpay face:
 
@@ -16,6 +21,7 @@ Payment aggregators like Razorpay face:
 - **Merchant account freezes** triggered by high decline rates and retry exhaustion  
 - **Manual, reactive processes** that detect issues only after revenue is lost and merchants are at risk  
 
+Across India, merchants lose an estimated **₹25,000 crores every year** to payment failures [source].  
 This project addresses both: **recover more failed payments** and **prevent freezes before they happen**.
 
 ---
@@ -344,17 +350,41 @@ Technical      :  35 (18%)  ← Almost always recoverable
 ```
 
 ---
+
+## 🎯 Why This Fits Track 3
+
+| Criterion          | Approach                                      | Why It Matters                              |
+|--------------------|-----------------------------------------------|---------------------------------------------|
+| Freeze Detection   | CRITICAL alert with ~24 h lead time           | Directly addresses Razorpay’s #1 churn risk |
+| Honest Metrics     | Per-type breakdown, no cherry-picking         | Judges can trust the numbers                |
+| Compliance         | 200/200 audited, 0 violations                 | Production-deployable today                 |
+| Code Quality       | 39/39 tests, GitHub Actions CI/CD             | Engineering credibility                     |
+| Real API           | Razorpay test endpoint + backoff decorator    | Not mocked — actually calls Razorpay        |
+| Explainability     | SHAP per decision                             | Meets compliance & audit needs              |
+
+---
+
+## 🎥 Demo
+
+A 3–4 minute walkthrough of the agent running end-to-end, including recovery results, freeze alerts, and compliance audit trail:  
+
+[Add your video link here – YouTube / Loom / Drive]
+
+---
+
 ## 📚 References & Further Reading
 
+- Paytring. “Indian Merchants Lose Rs 25,000 Crore Annually to Payment Failures.” LinkedIn, 2026.  
+  https://www.linkedin.com/posts/paytring_paymentsuccess-fintech-checkoutoptimization-activity-7480893807396315136-attd  
 - Recurly — *Failed Payment Recovery: What the Data Shows*  
-  https://recurly.com/blog/failed-payment-recovery-data-based-strategy/ 
+  https://recurly.com/blog/failed-payment-recovery-data-based-strategy/  
 - Recurly — *Understanding Intelligent Retries*  
-  https://recurly.com/blog/product-perspectives-understanding-intelligent-retries/ 
+  https://recurly.com/blog/product-perspectives-understanding-intelligent-retries/  
 - Recurly Documentation — *Intelligent retries*  
-  https://docs.recurly.com/recurly-subscriptions/docs/retry-logic 
+  https://docs.recurly.com/recurly-subscriptions/docs/retry-logic  
 - RBI — *Guidelines on Regulation of Payment Aggregators and Payment Gateways*  
-  https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12050 
+  https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id=12050  
 - Checkout.com — *Chargebacks in agentic commerce*  
-  https://www.checkout.com/blog/chargebacks-in-agentic-commerce-how-merchants-can-stay-ahead 
+  https://www.checkout.com/blog/chargebacks-in-agentic-commerce-how-merchants-can-stay-ahead  
 
 ---
